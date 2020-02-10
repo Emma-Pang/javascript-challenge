@@ -44,4 +44,12 @@ button.on("click", function() {
     var filteredData = data.filter(sighting => sighting.datetime === inputValue);
   
     console.log(filteredData);
+    
+    filteredData.forEach((ufoSighting) => {
+        var row = tbody.append("tr");
+        Object.entries(ufoSighting).forEach(([key, value]) => {
+          var cell = row.append("td");
+          cell.text(value);
+        });
+      });
 });
