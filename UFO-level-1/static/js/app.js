@@ -16,22 +16,12 @@ data.forEach((ufoSighting) => {
     });
   });
 
-//   // button function - it works!
-//   button.on("click", function() {
 
-//     // Select the input element and get the raw HTML node
-//     var inputElement = d3.select("#datetime");
-  
-//     // Get the value property of the input element
-//     var inputValue = inputElement.property("value");
-  
-//     console.log(inputValue);
-  
-
-//   });
 
 button.on("click", function() {
 
+    tbody.html("");
+ 
     // Select the input element and get the raw HTML node
     var inputElement = d3.select("#datetime");
   
@@ -44,7 +34,9 @@ button.on("click", function() {
     var filteredData = data.filter(sighting => sighting.datetime === inputValue);
   
     console.log(filteredData);
+
     
+
     filteredData.forEach((ufoSighting) => {
         var row = tbody.append("tr");
         Object.entries(ufoSighting).forEach(([key, value]) => {
